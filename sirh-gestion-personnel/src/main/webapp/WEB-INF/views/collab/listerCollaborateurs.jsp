@@ -1,4 +1,6 @@
-<%@page import="java.util.List"%><%@ page language="java"
+<%@page import="java.util.List"%>
+<%@page import="dev.sgp.entite.Collaborateur"%>
+<%@ page language="java"
 	pageEncoding="UTF-8"%><!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +13,9 @@
 	<h1>Les collaborateurs</h1>
 	<ul>
 		<%
-			List<String> listeNoms = (List<String>) request.getAttribute("listeNoms");
-			for (String nom : listeNoms) {
-		%><li><%=nom%></li>
+			List<Collaborateur> listCollaborateur = (List<Collaborateur>) request.getAttribute("collaborateurs");
+			for (Collaborateur collaborateur : listCollaborateur) {
+		%><li><%=collaborateur.getNom()%></li>
 		<%}%>
 	</ul>
 </body>

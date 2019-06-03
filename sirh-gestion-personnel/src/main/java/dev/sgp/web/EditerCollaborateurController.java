@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import dev.sgp.util.*;
 
 public class EditerCollaborateurController  extends HttpServlet {
 	private static final long serialVersionUID = -2796943719061702802L;
@@ -18,7 +19,7 @@ public class EditerCollaborateurController  extends HttpServlet {
 		// code HTML
 
 		resp.setContentType("text/html");
-		if(isNullOrEmpty(matricule)) {
+		if(Fonctions.isNullOrEmpty(matricule)) {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			resp.getWriter().write("un matricule est attendu");
 		} else {
@@ -36,21 +37,21 @@ public class EditerCollaborateurController  extends HttpServlet {
 		String prenom = req.getParameter("prenom");
 
 		resp.setContentType("text/html");
-		if(isNullOrEmpty(matricule) || isNullOrEmpty(titre) || isNullOrEmpty(nom) || isNullOrEmpty(prenom)) {
+		if(Fonctions.isNullOrEmpty(matricule) || Fonctions.isNullOrEmpty(titre) || Fonctions.isNullOrEmpty(nom) || Fonctions.isNullOrEmpty(prenom)) {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			resp.getWriter().write("Les paramètres suivants sont incorrects:");
 			resp.getWriter().write("<ul>");
 			
-			if(isNullOrEmpty(matricule)) {
+			if(Fonctions.isNullOrEmpty(matricule)) {
 				resp.getWriter().write("<li>matricule</li>");
 			}
-			if(isNullOrEmpty(titre)) {
+			if(Fonctions.isNullOrEmpty(titre)) {
 				resp.getWriter().write("<li>titre</li>");
 			}
-			if(isNullOrEmpty(nom)) {
+			if(Fonctions.isNullOrEmpty(nom)) {
 				resp.getWriter().write("<li>nom</li>");
 			}
-			if(isNullOrEmpty(prenom)) {
+			if(Fonctions.isNullOrEmpty(prenom)) {
 				resp.getWriter().write("<li>prenom</li>");
 			}
 			resp.getWriter().write("</ul>");
@@ -65,10 +66,4 @@ public class EditerCollaborateurController  extends HttpServlet {
 		}
 		
 	}
-	
-	public static boolean isNullOrEmpty(String str) {
-        if(str != null && !str.isEmpty())
-            return false;
-        return true;
-    }
 }

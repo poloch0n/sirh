@@ -7,7 +7,7 @@ public class Collaborateur {
 	String matricule;
 	String nom;
 	String prenom;
-	LocalDate date_de_naissance;
+	LocalDate dateNaissance;
 	String adresse;
 	String numero_securite_social;
 	String emailPro;
@@ -33,11 +33,11 @@ public class Collaborateur {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public LocalDate getDate_de_naissance() {
-		return date_de_naissance;
+	public LocalDate getDateNaissance() {
+		return dateNaissance;
 	}
-	public void setDate_de_naissance(LocalDate date_de_naissance) {
-		this.date_de_naissance = date_de_naissance;
+	public void setDateNaissance(LocalDate dateNaissance) {
+		this.dateNaissance = dateNaissance;
 	}
 	public String getAdresse() {
 		return adresse;
