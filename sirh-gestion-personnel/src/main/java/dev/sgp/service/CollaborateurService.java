@@ -4,7 +4,7 @@ import java.util.*;
 import dev.sgp.entite.Collaborateur;
 
 public class CollaborateurService {
-	List<Collaborateur> listeCollaborateurs = new ArrayList<>();
+	List<Collaborateur> listeCollaborateurs = new ArrayList<Collaborateur>();
 
 	public List<Collaborateur> listerCollaborateurs() {
 		return listeCollaborateurs;
